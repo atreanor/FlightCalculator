@@ -8,11 +8,12 @@ def main():
 
     print("Welcome to the Flight Path Calculator!")
     print()
-    airport_csv = "/home/alan/PycharmProjects/routeCalc/data/newAirport.csv"
+    # append absolute file path below for newAirport.csv on local instance
+    airport_csv = "/home/FlightCalculator/data/newAirport.csv"
     new_atlas = AirportAtlas(airport_csv)
-    aircraft_csv = "/home/alan/PycharmProjects/routeCalc/data/newAircraft.csv"
+    # append absolute file path below for newAircraft.csv on local instance
+    aircraft_csv = "/home/FlightCalculator/data/newAircraft.csv"
     new_fleet = AircraftFleet(aircraft_csv)
-    # input_csv = '/home/alan/PycharmProjects/routeCalc/data/test_data.csv'
     input_csv = input("Enter a CSV file with required parameters: ")
     new_itinerary = Itinerary(new_atlas.airport_dict, new_fleet.aircraft_dict)
     new_itinerary.load_itinerary(input_csv)
